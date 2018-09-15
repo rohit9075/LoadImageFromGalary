@@ -61,9 +61,11 @@ public class MainActivity extends AppCompatActivity {
                 String[] filePathColumn = { MediaStore.Images.Media.DATA };
 
                 // Get the cursor
+                assert selectedImage != null;
                 Cursor cursor = getContentResolver().query(selectedImage,
                         filePathColumn, null, null, null);
                 // Move to first row
+                assert cursor != null;
                 cursor.moveToFirst();
 
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
